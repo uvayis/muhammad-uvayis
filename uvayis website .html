@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Uvayis - Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+        .neon-glow {
+            box-shadow: 0 0 10px rgba(79, 70, 229, 0.5), 0 0 20px rgba(79, 70, 229, 0.3);
+            transition: all 0.3s ease;
+        }
+        .neon-glow:hover {
+            box-shadow: 0 0 15px rgba(79, 70, 229, 0.8), 0 0 30px rgba(79, 70, 229, 0.5);
+        }
+        .nav-link:hover {
+            text-shadow: 0 0 5px rgba(79, 70, 229, 0.8);
+        }
+        .section-bg {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1a1a2e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4f46e5;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #4f46e5;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .profile-img {
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
+        }
+    </style>
+</head>
+<body class="font-poppins text-gray-100">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-900 shadow-lg fixed w-full z-10 neon-glow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-indigo-400">Muhammad Uvayis</h1>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button id="menu-toggle" class="text-gray-300 hover:text-indigo-400 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="menu" class="hidden md:flex md:items-center md:space-x-4">
+                    <a href="#home" class="text-gray-300 hover:text-indigo-400 nav-link">Home</a>
+                    <a href="#about" class="text-gray-300 hover:text-indigo-400 nav-link">About</a>
+                    <a href="#experience" class="text-gray-300 hover:text-indigo-400 nav-link">Experience</a>
+                    <a href="#education" class="text-gray-300 hover:text-indigo-400 nav-link">Education</a>
+                    <a href="#achievements" class="text-gray-300 hover:text-indigo-400 nav-link">Achievements</a>
+                    <a href="#projects" class="text-gray-300 hover:text-indigo-400 nav-link">Projects</a>
+                    <a href="#photography" class="text-gray-300 hover:text-indigo-400 nav-link">Photography</a>
+                    <a href="#contact" class="text-gray-300 hover:text-indigo-400 nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-gray-900 md:hidden">
+            <div class="flex flex-col space-y-4 px-4 py-4">
+                <a href="#home" class="text-gray-300 hover:text-indigo-400 nav-link">Home</a>
+                <a href="#about" class="text-gray-300 hover:text-indigo-400 nav-link">About</a>
+                <a href="#experience" class="text-gray-300 hover:text-indigo-400 nav-link">Experience</a>
+                <a href="#education" class="text-gray-300 hover:text-indigo-400 nav-link">Education</a>
+                <a href="#achievements" class="text-gray-300 hover:text-indigo-400 nav-link">Achievements</a>
+                <a href="#projects" class="text-gray-300 hover:text-indigo-400 nav-link">Projects</a>
+                <a href="#photography" class="text-gray-300 hover:text-indigo-400 nav-link">Photography</a>
+                <a href="#contact" class="text-gray-300 hover:text-indigo-400 nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-900 to-indigo-900 text-white" data-aos="fade-up">
+        <div class="text-center px-4">
+            <div class="mb-6">
+                <img src="https://i.ibb.co/hFTXzZdf/20240617095717-MG-4283-1.jpg" alt="Muhammad Uvayis Profile Picture" class="profile-img mx-auto w-40 h-40 object-cover neon-glow" data-aos="zoom-in">
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-indigo-300 neon-glow">Muhammad Uvayis</h1>
+            <p class="text-xl md:text-2xl mb-6 text-gray-300">Food Technologist | MBA Aspirant | Innovation-Driven Entrepreneur</p>
+            <p class="text-lg mb-8 text-gray-400">"Build bold. Solve real. Create food futures with purpose."</p>
+            <a href="#contact" class="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-500 transition neon-glow">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 section-bg" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-indigo-300">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <p class="text-lg leading-relaxed text-gray-300">
+                        Entrepreneurial-minded MBA aspirant with a solid foundation in Food Technology, quality assurance, and food processing. 
+                        Committed to revolutionizing the food industry by blending scientific expertise with business innovation. 
+                        Eager to build scalable, impactful ventures that drive value in the FMCG and food-tech sectors through operational excellence and strategic leadership.
+                    </p>
+                    <div class="mt-6">
+                        <h3 class="text-xl font-semibold mb-4 text-indigo-400">Interests</h3>
+                        <ul class="list-disc list-inside text-gray-300">
+                            <li>Photography</li>
+                            <li>Entrepreneurship</li>
+                            <li>Content Creation</li>
+                            <li>Food Industry Analysis</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-800 p-6 rounded-lg neon-glow">
+                        <h3 class="text-xl font-semibold mb-4 text-indigo-400">Skills</h3>
+                        <ul class="grid grid-cols-2 gap-4 text-gray-300">
+                            <li class="flex items-center"><span class="mr-2">•</span> Food Industry Equipment</li>
+                            <li class="flex items-center"><span class="mr-2">•</span> Quality Tools</li>
+                            <li class="flex items-center"><span class="mr-2">•</span> Excel, Canva, Photoshop</li>
+                            <li class="flex items-center"><span class="mr-2">•</span> Google Suite, AI Tools</li>
+                            <li class="flex items-center"><span class="mr-2">•</span> English</li>
+                            <li class="flex items-center"><span class="mr-2">•</span> Malayalam</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-4 section-bg" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-indigo-300">Experience</h2>
+            <div class="space-y-8">
+                <div class="bg-gray-800 p-6 rounded-lg neon-glow">
+                    <h3 class="text-xl font-semibold text-indigo-400">Operations Supervisor</h3>
+                    <p class="text-gray-400">V & U Enterprise | June 2025 – Present</p>
+                    <ul class="list-disc list-inside mt-4 text-gray-300">
+                        <li>Supervise food repackaging, branding, and logistics</li>
+                        <li>Maintain quality and hygiene standards for product distribution</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg neon-glow">
+                    <h3 class="text-xl font-semibold text-indigo-400">Internship - National Institute of Fisheries</h3>
+                    <p class="text-gray-400">April 2024</p>
+                    <ul class="list-disc list-inside mt-4 text-gray-300">
+                        <li>Training on organoleptic analysis, fish product processing, hygiene & microbiology</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg neon-glow">
+                    <h3 class="text-xl font-semibold text-indigo-400">Internship - MILMA Kollam Dairy</h3>
+                    <p class="text-gray-400">May 2023</p>
+                    <ul class="list-disc list-inside mt-4 text-gray-300">
+                        <li>Training in dairy operations, packaging, and quality control</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section id="education" class="py-20 px-4 section-bg" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-indigo-300">Education & Certifications</h2>
+            <div class="space-y-8">
+                <div class="bg-gray-800 p-6 rounded-lg neon-glow">
+                    <h3 class="text-xl font-semibold text-indigo-400">B.Sc. in Food Technology and Quality Assurance</h3>
+                    <p class="text-gray-400">Mahatma Gandhi University, Kerala | 2022 – 2025</p>
+                    <p class="text-gray-400">College of Indigenous Food Technology, Konni | CGPA: 8.5</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg neon-glow">
+                    <h3 class="text-xl font-semibold text-indigo-400">Higher Secondary Education</h3>
+                    <p class="text-gray-400">GHSS Navaikulam, TVM | 95 percentage</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg neon-glow">
+                    <h3 class="text-xl font-semibold text-indigo-400">High School Education</h3>
+                    <p class="text-gray-400">AKM HS Kudavoor, TVM | 90 percentage</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg neon-glow">
+                    <h3 class="text-xl font-semibold text-indigo-400">Certifications</h3>
+                    <ul class="list-disc list-inside mt-4 text-gray-300">
+                        <li>HACCP Level 3 (Highfield UK)</li>
+                        <li>GMP, GHP & FoSTaC (FSSAI Certified)</li>
+                        <li>Generative AI Workshop by Outskill</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 px-4 section-bg" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-indigo-300">Achievements</h2>
+            <div class="bg-gray-800 p-6 rounded-lg neon-glow">
+                <h3 class="text-xl font-semibold text-indigo-400">Selected and participate for 'Face to Face with the Chief Minister'</h3>
+                <p class="text-gray-400">Emerging Kerala 2024</p>
+                <p class="mt-4 text-gray-300">Recognized for potential and contributions in the food technology and entrepreneurial space during a prestigious state-level event.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 section-bg" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-indigo-300">Academic Project</h2>
+            <div class="bg-gray-800 p-6 rounded-lg neon-glow">
+                <h3 class="text-xl font-semibold text-indigo-400">Formulation and Quality Assessment of CHIXTURE</h3>
+                <p class="text-gray-400">KVASU, Meat Technology Unit | 1-month duration</p>
+                <p class="mt-4 text-gray-300">Developed an innovative high-protein traditional snack using chicken and Nigella sativa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photography Section -->
+    <section id="photography" class="py-20 px-4 section-bg" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-indigo-300">Photography</h2>
+            <div class="bg-gray-800 p-6 rounded-lg neon-glow">
+                <p class="text-gray-300">I am a passionate photographer capturing moments and stories through my lens. My work reflects my love for creativity and detail. Check out my photography on Instagram at <a href="https://www.instagram.com/obedientark" target="_blank" class="underline hover:text-indigo-400">obedientark</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-gradient-to-r from-indigo-900 to-gray-900 text-white" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-12 text-indigo-300">Get in Touch</h2>
+            <p class="text-lg mb-4 text-gray-300">📧 Email: <a href="mailto:muhammaduvayis3@gmail.com" class="underline hover:text-indigo-400">muhammaduvayis3@gmail.com</a></p>
+            <p class="text-lg mb-4 text-gray-300">🔗 LinkedIn: <a href="https://linkedin.com/in/muhammad-uvayis-35a1ab311" class="underline hover:text-indigo-400">muhammad-uvayis-35a1ab311</a></p>
+            <p class="text-lg mb-4 text-gray-300">📸 Instagram: <a href="https://www.instagram.com/cladiooz" target="_blank" class="underline hover:text-indigo-400">cladiooz</a> | Photography: <a href="https://www.instagram.com/obedientark" target="_blank" class="underline hover:text-indigo-400">obedientark</a></p>
+            <p class="text-lg text-gray-300">📍 Location: Thiruvananthapuram, Kerala, India</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="https://linkedin.com/in/muhammad-uvayis-35a1ab311" target="_blank" class="text-gray-300 hover:text-indigo-400">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/cladiooz" target="_blank" class="text-gray-300 hover:text-indigo-400">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5zm9.25 2a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1zm-5 2.5a4.5 4.5 0 0 1 4.5 4.5 4.5 4.5 0 0 1-4.5 4.5 4.5 4.5 0 0 1-4.5-4.5 4.5 4.5 0 0 1 4.5-4.5zm0 1.5a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
+                    </svg>
+                </a>
+            </div>
+            <p>&copy; 2025 Muhammad Uvayis. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div id="back-to-top" class="neon-glow" title="Back to Top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({ duration: 1000 });
+
+        // Preloader
+        window.addEventListener('load', () => {
+            document.getElementById('preloader').style.display = 'none';
+        });
+
+        // Hamburger Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                mobileMenu.classList.add('hidden'); // Close mobile menu on link click
+            });
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.style.display = 'flex';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
